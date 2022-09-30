@@ -1,0 +1,41 @@
+From 1bee02ea54ff7ca2afbd5d462f725826ddb43386 Mon Sep 17 00:00:00 2001
+From: Siarhei Yasinski <siarhei.yasinski@sintecs.eu>
+Date: Tue, 27 Sep 2022 14:18:17 +0300
+Subject: [PATCH] Updated engine.c for openssl3.
+
+Signed-off-by: Siarhei Yasinski <siarhei.yasinski@sintecs.eu>
+---
+ key/aziot-key-openssl-engine/build/engine.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/key/aziot-key-openssl-engine/build/engine.c b/key/aziot-key-openssl-engine/build/engine.c
+index 73d7bef..733972d 100644
+--- a/key/aziot-key-openssl-engine/build/engine.c
++++ b/key/aziot-key-openssl-engine/build/engine.c
+@@ -18,7 +18,7 @@
+  */
+ 
+ #if OPENSSL_VERSION_NUMBER >= 0x10100000L
+-int aziot_key_dupf_engine_ex_data(CRYPTO_EX_DATA *to, const CRYPTO_EX_DATA *from, void *from_d, int idx, long argl, void *argp);
++int aziot_key_dupf_engine_ex_data(CRYPTO_EX_DATA *to, const CRYPTO_EX_DATA *from, void **from_d, int idx, long argl, void *argp);
+ #else
+ int aziot_key_dupf_engine_ex_data(CRYPTO_EX_DATA *to, CRYPTO_EX_DATA *from, void *from_d, int idx, long argl, void *argp);
+ #endif
+@@ -34,7 +34,7 @@ int aziot_key_get_engine_ex_index() {
+ }
+ 
+ #if OPENSSL_VERSION_NUMBER >= 0x10100000L
+-int aziot_key_dupf_ec_key_ex_data(CRYPTO_EX_DATA *to, const CRYPTO_EX_DATA *from, void *from_d, int idx, long argl, void *argp);
++int aziot_key_dupf_ec_key_ex_data(CRYPTO_EX_DATA *to, const CRYPTO_EX_DATA *from, void **from_d, int idx, long argl, void *argp);
+ #else
+ int aziot_key_dupf_ec_key_ex_data(CRYPTO_EX_DATA *to, CRYPTO_EX_DATA *from, void *from_d, int idx, long argl, void *argp);
+ #endif
+@@ -49,7 +49,7 @@ int aziot_key_get_ec_key_ex_index() {
+ }
+ 
+ #if OPENSSL_VERSION_NUMBER >= 0x10100000L
+-int aziot_key_dupf_rsa_ex_data(CRYPTO_EX_DATA *to, const CRYPTO_EX_DATA *from, void *from_d, int idx, long argl, void *argp);
++int aziot_key_dupf_rsa_ex_data(CRYPTO_EX_DATA *to, const CRYPTO_EX_DATA *from, void **from_d, int idx, long argl, void *argp);
+ #else
+ int aziot_key_dupf_rsa_ex_data(CRYPTO_EX_DATA *to, CRYPTO_EX_DATA *from, void *from_d, int idx, long argl, void *argp);
+ #endif

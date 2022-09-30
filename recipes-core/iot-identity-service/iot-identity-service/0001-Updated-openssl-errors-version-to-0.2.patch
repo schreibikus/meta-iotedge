@@ -1,0 +1,39 @@
+From ec5cd7d43e6e6ecc5a0be375b7c9788f7b8d5413 Mon Sep 17 00:00:00 2001
+From: Siarhei Yasinski <siarhei.yasinski@sintecs.eu>
+Date: Tue, 27 Sep 2022 14:11:31 +0300
+Subject: [PATCH] Updated openssl-errors version to 0.2
+
+To avoid missing openssl 1.1. Poky uses openssl 3.
+
+Signed-off-by: Siarhei Yasinski <siarhei.yasinski@sintecs.eu>
+---
+ key/aziot-key-openssl-engine-shared/Cargo.toml | 2 +-
+ key/aziot-key-openssl-engine/Cargo.toml        | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/key/aziot-key-openssl-engine-shared/Cargo.toml b/key/aziot-key-openssl-engine-shared/Cargo.toml
+index 583c218..eb50292 100644
+--- a/key/aziot-key-openssl-engine-shared/Cargo.toml
++++ b/key/aziot-key-openssl-engine-shared/Cargo.toml
+@@ -12,7 +12,7 @@ crate-type = ["cdylib"]
+ 
+ 
+ [dependencies]
+-openssl-errors = "0.1"
++openssl-errors = "0.2"
+ openssl-sys = "0.9"
+ url = "2"
+ 
+diff --git a/key/aziot-key-openssl-engine/Cargo.toml b/key/aziot-key-openssl-engine/Cargo.toml
+index 1d0b5c2..0950c38 100644
+--- a/key/aziot-key-openssl-engine/Cargo.toml
++++ b/key/aziot-key-openssl-engine/Cargo.toml
+@@ -12,7 +12,7 @@ base64 = "0.13"
+ foreign-types-shared = "0.1"
+ log = "0.4"
+ openssl = "0.10"
+-openssl-errors = "0.1"
++openssl-errors = "0.2"
+ openssl-sys = "0.9"
+ 
+ aziot-key-client = { path = "../aziot-key-client" }

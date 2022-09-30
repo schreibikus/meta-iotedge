@@ -1,0 +1,28 @@
+From a0f05d90ef6fe892c2356e7c4552571d6677f173 Mon Sep 17 00:00:00 2001
+From: Siarhei Yasinski <siarhei.yasinski@sintecs.eu>
+Date: Thu, 29 Sep 2022 09:41:50 +0300
+Subject: [PATCH] Panic strategy changed from abort to unwind for
+ iotedge/edglet
+
+Signed-off-by: Siarhei Yasinski <siarhei.yasinski@sintecs.eu>
+---
+ edgelet/Cargo.toml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/edgelet/Cargo.toml b/edgelet/Cargo.toml
+index f936b9044..415655f76 100644
+--- a/edgelet/Cargo.toml
++++ b/edgelet/Cargo.toml
+@@ -15,7 +15,7 @@ members = [
+ ]
+ 
+ [profile.dev]
+-panic = 'abort'
++panic = 'unwind'
+ 
+ [profile.release]
+-panic = 'abort'
++panic = 'unwind'
+-- 
+2.25.1
+
