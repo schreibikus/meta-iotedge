@@ -325,7 +325,7 @@ SRC_URI += " \
            file://0002-Updated-engine.c-for-openssl3.patch;patchdir=${WORKDIR}/iot-identity-service \
            file://0003-Panic-strategy-changed-from-abort-to-unwind.patch;patchdir=${WORKDIR}/iot-identity-service \
 "
-SRCREV = "d65a3aeac060296280ff5ef4475137b79031e29e"
+SRCREV = "bb9a26162c4c88b3ef9a50d33632ab78bd4247d6"
 S = "${WORKDIR}/git"
 CARGO_SRC_DIR = "edgelet"
 
